@@ -1,0 +1,381 @@
+@import "./data.scss";
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: $black-dark;
+  font-family: $font-secundary;
+  color: $white;
+}
+
+#root{
+  position: relative;
+}
+
+.nav{
+  width: 100%;
+  height: 60px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+  z-index: 100;
+  &_logo{
+    width: 40px;
+    height: fit-content;
+  }
+  &_button_container{
+    display: block;
+    :first-child{
+      margin-left: 0;
+    }
+    :last-child{
+      margin-right: 0;
+    }
+  }
+  &_button{
+    margin: 0 15px;
+    color: $white-light;
+    text-decoration: none;
+    position: relative;
+    &:after{
+      content: "";
+      width: 3px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: $white-light;
+      opacity: 0;
+      position: absolute;
+      bottom: -10px;
+      left: calc(50% - 2px);
+      transition: width .2s, background-color .2s, opacity .2s, left .2s;
+    }
+    &:hover{
+      color: $white-dark;
+      &:after{
+        width: 100%;
+        opacity: 1;
+        left: 0;
+      }
+    }
+  }
+}
+
+section{
+  width: calc(100% - 40px);
+  height: calc(100vh - 130px);
+  margin: 0 20px;
+  overflow: hidden;
+  overflow-y: scroll;
+  animation: appear .25s ease-out;
+  &:hover{
+    &::-webkit-scrollbar-thumb{
+      background-color: $white;
+    }
+  }
+  &::-webkit-scrollbar{
+    width: 6px;
+    &-thumb{
+      border-radius: 5px;
+      background-color: transparent;
+      transition: background-color .1s;
+    }
+  }
+}
+
+.section-fotos{
+  .image_container{
+    width: 100%;
+    height: fit-content;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+  .image{
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    &-principal{
+      width: 100%;
+    }
+    &-cover{
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .slider{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0 30px;
+    background: rgba($color: #000, $alpha: .85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    &_image{
+      height: 100%;
+      animation: appear .25s ease-out;
+    }
+    &_button{
+      width: 33%;
+      height: 75%;
+      padding: 20px;
+      border: none;
+      background: transparent;
+      color: $white-dark;
+      font-size: 2rem;
+      outline: none;
+      cursor: pointer;
+      transition: color .1s, font .1s;
+      &:hover{
+        color: $white-light;
+        font-size: 1.2em;
+      }
+      &-left{
+        @extend .slider_button;
+        text-align: left;
+      }
+      &-right{
+        @extend .slider_button;
+        text-align: right;
+      }
+      &-close{
+        @extend .slider_button;
+        width: fit-content;
+        height: fit-content;
+        padding: 5px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        &:hover{
+          font-size: 2rem;
+          color: rgb(230, 47, 47)
+        }
+      }
+    }
+    &_counter{
+      width: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      position: absolute;
+      left: calc(50% - 35px);
+      bottom: 5px;
+    }
+    &_arrow_container{
+      width: 140px;
+      height: fit-content;
+      position: absolute;
+      left: calc(50% - 70px);
+      bottom: 40px;
+      opacity: 0;
+      animation: arrow-appear 3s .5s ease-in-out;
+      p{
+        margin: 0 0 10px;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+    &_arrows{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img{
+        height: 50px;
+      }
+    }
+  }
+}
+
+.section-precios{
+  padding: 0 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  .caption{
+    margin: 0;
+    font-family: $font-primary;
+    font-size: 2rem;
+  }
+  .oferta{
+    &_container{
+      width: 100%;
+      height: fit-content;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      align-items: center;
+    }
+    &_card{
+      width: 300px;
+      height: 400px;
+      border-radius: 20px;
+      padding: 20px;
+      background: radial-gradient(at top left, $white-dark, $white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: $black-light;
+    }
+    &_title{
+      font-size: 1.5rem;
+    }
+    &_precio{
+      margin: 0;
+      color: $black-dark;
+      font-family: $font-primary;
+      font-size: 6rem;
+    }
+    &_list{
+      width: 100%;
+      padding-inline-start: 20px;
+      text-align: left;
+      font-size: 1.25rem;
+      list-style-type: none;
+      &_item{
+        margin: 10px 0;
+        position: relative;
+        &::after{
+          content: "";
+          width: .5rem;
+          height: .5rem;
+          border-radius: .25rem;
+          background-color: $blue;
+          position: absolute;
+          top: calc(50% - .25rem);
+          left: -20px;
+        }
+      }
+    }
+  }
+}
+
+.contact{
+  width: 116px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+  right: 40px;
+  z-index: 100;
+  &_link{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: $white;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.35);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    transition: background-color .2s, color .2s, transform .1s;
+    &:hover{
+      transform: scale(1.25);
+    }
+  }
+  .instagram{
+    &:hover{
+      background-color: #D82D7E;
+      color: white;
+      .fa-instagram{
+        background: unset;
+        background-clip: unset;
+        -webkit-text-fill-color: unset;
+      }
+    }
+    .fa-instagram{
+      background: radial-gradient(130.55% 130.54% at 13.29% 100.47%, #FA8F21 9%, #D82D7E 48%, #8c3aaa 78%, #8C3AAA 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .email{
+    color: #D81D1D;
+    font-size: 26px;
+    &:hover{
+      background-color: #D81D1D;
+      color: white;
+    }
+  }
+  .whatsapp{
+    color: #25D366;
+    &:hover{
+      background-color: #25D366;
+      color: white;
+    }
+  }
+}
+
+.footer{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: $white-light;
+  position: relative;
+  .copyright{
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: $font-primary;
+  }
+  .lukway{
+    &_link{
+      margin: 8px 0 5px;
+      font-size: .8rem;
+      color: $white-dark;
+      text-decoration: none;
+    }
+    &_logo{
+      height: .8rem;
+    }
+  }
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes arrow-appear {
+  0%{
+    opacity: 0;
+  }
+  20%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
