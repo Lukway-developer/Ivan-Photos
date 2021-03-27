@@ -1,0 +1,65 @@
+.section-precios{
+  padding: 0 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  .caption{
+    margin: 0;
+    font-family: $font-primary;
+    font-size: 2rem;
+  }
+  .oferta{
+    &_container{
+      width: 100%;
+      height: fit-content;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      align-items: center;
+    }
+    &_card{
+      width: 300px;
+      height: 400px;
+      border-radius: 20px;
+      padding: 20px;
+      background: radial-gradient(at top left, $white-dark, $white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: $black-light;
+    }
+    &_title{
+      font-size: 1.5rem;
+    }
+    &_precio{
+      margin: 0;
+      color: $black-dark;
+      font-family: $font-primary;
+      font-size: 6rem;
+    }
+    &_list{
+      width: 100%;
+      padding-inline-start: 20px;
+      text-align: left;
+      font-size: 1.25rem;
+      list-style-type: none;
+      &_item{
+        margin: 10px 0;
+        position: relative;
+        &::after{
+          content: "";
+          width: .5rem;
+          height: .5rem;
+          border-radius: .25rem;
+          background-color: $blue;
+          position: absolute;
+          top: calc(50% - .25rem);
+          left: -20px;
+        }
+      }
+    }
+  }
+}

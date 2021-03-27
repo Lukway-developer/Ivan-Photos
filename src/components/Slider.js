@@ -3,16 +3,6 @@ import { useState } from 'react'
 const Slider = ({ imageId, images, handleZoomClose }) => {
   const [currentImage, changeImage] = useState(imageId)
 
-  // const sliderImage = document.querySelector('.slider_image')
-
-  // sliderImage.animate([
-  //   { opacity: 0 },
-  //   { opacity: 1 }
-  // ], {
-  //   duration: 250,
-  //   easing: 'ease-out'
-  // })
-
   const slideToLeft = () => {
     if ((currentImage - 1) === -1) {
       changeImage(images.length - 1)
@@ -30,7 +20,6 @@ const Slider = ({ imageId, images, handleZoomClose }) => {
   }
 
   const keyPress = (e) => {
-    console.log(e)
     const key = e.keyCode
     if (key === 37) {
       slideToLeft()

@@ -1,0 +1,87 @@
+.slider{
+  width: 100%;
+  height: 100%;
+  padding: 20px 0 30px;
+  background: rgba($color: #000, $alpha: .85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  &_image{
+    height: 100%;
+    animation: appear .25s ease-out;
+  }
+  &_button{
+    width: 33%;
+    height: 75%;
+    padding: 20px;
+    border: none;
+    background: transparent;
+    color: $white-dark;
+    font-size: 2rem;
+    outline: none;
+    cursor: pointer;
+    transition: color .1s, font .1s;
+    &:hover{
+      color: $white-light;
+      font-size: 1.2em;
+    }
+    &-left{
+      @extend .slider_button;
+      text-align: left;
+    }
+    &-right{
+      @extend .slider_button;
+      text-align: right;
+    }
+    &-close{
+      @extend .slider_button;
+      width: fit-content;
+      height: fit-content;
+      padding: 5px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      &:hover{
+        font-size: 2rem;
+        color: rgb(230, 47, 47)
+      }
+    }
+  }
+  &_counter{
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: absolute;
+    left: calc(50% - 35px);
+    bottom: 5px;
+  }
+  &_arrow_container{
+    width: 140px;
+    height: fit-content;
+    position: absolute;
+    left: calc(50% - 70px);
+    bottom: 40px;
+    opacity: 0;
+    animation: arrow-appear 2.5s .25s ease-in-out;
+    p{
+      margin: 0 0 10px;
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+  &_arrows{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+      height: 50px;
+    }
+  }
+}

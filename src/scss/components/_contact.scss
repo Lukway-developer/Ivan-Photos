@@ -1,0 +1,49 @@
+.contact{
+  width: 90px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+  right: 40px;
+  z-index: 100;
+  &_link{
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.35);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-size: 30px;
+    text-decoration: none;
+    transition: background-color .2s, color .2s, transform .1s;
+    &:hover{
+      transform: scale(1.25);
+    }
+  }
+  .instagram{
+    &:hover{
+      .fa-instagram{
+        background: radial-gradient(130.55% 130.54% at 13.29% 100.47%, #FA8F21 9%, #D82D7E 48%, #8c3aaa 78%, #8C3AAA 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+  .email{
+    font-size: 26px;
+    &:hover{
+      color: #D81D1D;
+    }
+  }
+  .whatsapp{
+    color: #25D366;
+    &:hover{
+      background-color: #25D366;
+      color: white;
+    }
+  }
+}
