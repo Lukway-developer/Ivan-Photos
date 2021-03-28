@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Ivan-Photos/static/css/main.0864d91c.chunk.css",
-    "main.js": "/Ivan-Photos/static/js/main.2b438315.chunk.js",
-    "main.js.map": "/Ivan-Photos/static/js/main.2b438315.chunk.js.map",
+    "main.css": "/Ivan-Photos/static/css/main.0e0259bd.chunk.css",
+    "main.js": "/Ivan-Photos/static/js/main.361ace01.chunk.js",
+    "main.js.map": "/Ivan-Photos/static/js/main.361ace01.chunk.js.map",
     "runtime-main.js": "/Ivan-Photos/static/js/runtime-main.f4eccec4.js",
     "runtime-main.js.map": "/Ivan-Photos/static/js/runtime-main.f4eccec4.js.map",
     "static/js/2.60abe964.chunk.js": "/Ivan-Photos/static/js/2.60abe964.chunk.js",
     "static/js/2.60abe964.chunk.js.map": "/Ivan-Photos/static/js/2.60abe964.chunk.js.map",
     "index.html": "/Ivan-Photos/index.html",
-    "static/css/main.0864d91c.chunk.css.map": "/Ivan-Photos/static/css/main.0864d91c.chunk.css.map",
+    "static/css/main.0e0259bd.chunk.css.map": "/Ivan-Photos/static/css/main.0e0259bd.chunk.css.map",
     "static/js/2.60abe964.chunk.js.LICENSE.txt": "/Ivan-Photos/static/js/2.60abe964.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f4eccec4.js",
     "static/js/2.60abe964.chunk.js",
-    "static/css/main.0864d91c.chunk.css",
-    "static/js/main.2b438315.chunk.js"
+    "static/css/main.0e0259bd.chunk.css",
+    "static/js/main.361ace01.chunk.js"
   ]
 }
